@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hub di steganografia - Scelta tra Crittografia e Decrittografia">
+    <meta name="author" content="Simon">
+    <link rel="stylesheet" href="Encryption style.css">
+    <title>Steganografia - Hub</title>
+    <style>
+        .hub-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .hub-card {
+            padding: 30px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .hub-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .hub-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Steganografia - Scegli un'opzione</h1>
+    <div class="hub-container">
+        <div class="hub-card">
+            <a href="Encryption.html">
+                <h2>🔒 Crittografia</h2>
+                <p>Nascondi un testo all'interno di un'immagine</p>
+            </a>
+        </div>
+        <div class="hub-card">
+            <a href="Decryption.html">
+                <h2>🔓 Decrittografia</h2>
+                <p>Estrai il testo nascosto da un'immagine</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
