@@ -65,6 +65,11 @@ function prepare_canvas(binary_message){
     }
     ctx.putImageData(image_data, 0, 0);
     console.log("Dati nascosti con successo! Immagine steganografata pronta.");
+    window.scrollTo({
+    top: 500,
+    left: 0,
+    behavior: 'smooth'
+    });
 }
 function download(){
     const canvas = document.getElementById('modified_pic');
