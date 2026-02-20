@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Applicazione web di steganografia">
+    <meta name="author" content="Simon">
+    <link rel="stylesheet" href="Encryption style.css">
+    <title>Steganografia</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="Encryption scrip.js"></script>
+    <h1>Steganografia</h1>
+    <div>
+        <label name="testo_da_cifrare">Inserisci il testo</label>
+        <br>
+        <input type="text" id="testo_da_cifrare">
+        <br><br>
+        <input type="password" id="password">
+        <label name="password">Inserisci la password</label>
+        <br><br>
+        <button onclick="check()">Invia</button>
+    </div>
+        <h1>Immagine di partenza</h1>
+        <img src="Cat_November_2010-1a_(cropped_2023).jpg" id="starting_pic" width="250" height="250">
+
+        <h2>Immagine modificata</h2>
+        <canvas id="modified_pic"></canvas>
+
+    <button onclick="download()">Scarica immagine</button>
+</body>
+</html>

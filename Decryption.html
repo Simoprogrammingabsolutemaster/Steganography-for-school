@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Applicazione web di steganografia - Decriptazione">
+    <meta name="author" content="Simon">
+    <link rel="stylesheet" href="Encryption style.css">
+    <title>Steganografia - Decriptazione</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="Decryption script.js"></script>
+    <h1>Decriptazione Steganografia</h1>
+    <div>
+        <label for="password_decrypt">Inserisci la password</label>
+        <br>
+        <input type="password" id="password_decrypt">
+        <br><br>
+        <label for="image_decrypt">Carica immagine con testo nascosto</label>
+        <br>
+        <input type="file" id="image_decrypt" accept="image/*">
+        <br><br>
+        <button onclick="Img_load()">Decripta</button>
+    </div>
+    <h2 id = "decrypted">Testo decriptato</h2>
+    <p id="decrypted_text"></p>
+</body>
+</html>
