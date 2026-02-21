@@ -71,8 +71,12 @@ function Decrypt(password, data){
 }
 function finalDecryption(msg_to_decrypt, password){
 
+    try{
     let msg_decrypted_hex = CryptoJS.AES.decrypt(msg_to_decrypt, password);
     let msg_decrypted = msg_decrypted_hex.toString(CryptoJS.enc.Utf8)
     console.log(msg_decrypted);
-    document.getElementById("decrypted_text").innerText =msg_decrypted;
+    document.getElementById("decrypted_text").innerText =msg_decrypted;}
+    catch(error){
+        document.getElementById("error").innerText="ERRORE IMPOSSIBILE DECODIFICARE";
+    }
 }
