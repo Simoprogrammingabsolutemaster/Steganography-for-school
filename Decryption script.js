@@ -74,5 +74,5 @@ function finalDecryption(msg_to_decrypt, password){
     let msg_decrypted_hex = CryptoJS.AES.decrypt(msg_to_decrypt, password);
     let msg_decrypted = msg_decrypted_hex.toString(CryptoJS.enc.Utf8)
     console.log(msg_decrypted);
-    document.getElementById("decrypted").innerText ="Il messaggio è: " + msg_decrypted;
+    document.getElementById("decrypted_text").innerText =msg_decrypted;
 }
