@@ -30,12 +30,21 @@ function prepare_canvas(binary_message){
     canvas.width = img.width;
     canvas.height = img.height;
 
+    if(binary_message.length > canvas.width * canvas.height){
+        alert("Il messaggio è troppo lungo");
+        return;
+    }else{
+        let dimension = canvas.width * canvas.height;
+        let percentage_value = percentage(dimension, binary_message);
+        console.log(percentage_value.toFixed(3) + "%");
+        document.getElementById("testo_label").innerText ="Il testo pesa: il " + percentage_value.toFixed(3) + "%";
+    }
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
     const image_data= ctx.getImageData(0, 0, img.width, img.height);
     const pixel= image_data.data;
 
-    console.log(pixel);
+    //console.log(pixel);
     let value_counter = 0;
 
     for(let i = 0;i < binary_message.length; i++){
@@ -84,4 +93,8 @@ function download(){
     
     //simula il clic
     link.click();
+}
+function percentage(dimension, binary_message){
+    let percentage = (binary_message.length/dimension)*100
+    return percentage;
 }
