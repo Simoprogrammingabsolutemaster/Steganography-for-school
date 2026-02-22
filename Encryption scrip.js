@@ -1,4 +1,5 @@
 function check(){
+clearTimeout;
 const messaggio_da_cifrare = document.getElementById("testo_da_cifrare").value;
 const chiave = document.getElementById("password").value;
 
@@ -30,15 +31,16 @@ function prepare_canvas(binary_message){
     canvas.width = img.width;
     canvas.height = img.height;
 
-    if(binary_message.length > canvas.width * canvas.height){
-        alert("Il messaggio è troppo lungo");
-        return;
-    }else{
-        let dimension = canvas.width * canvas.height;
-        let percentage_value = percentage(dimension, binary_message);
+    let dimension = canvas.width * canvas.height;
+    let percentage_value = percentage(dimension, binary_message);
         console.log(percentage_value.toFixed(3) + "%");
-        document.getElementById("testo_label").innerText ="Il testo pesa: il " + percentage_value.toFixed(3) + "%";
+        document.getElementById("testo_label").innerText ="Il testo occupa il " + percentage_value.toFixed(3) + "% dell'immagine";
+
+    if(binary_message.length > canvas.width * canvas.height){
+        alert("Il messaggio è troppo lungo, occupa il " + percentage_value.toFixed(3) + "% dell'immagine");
+        return;
     }
+
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
     const image_data= ctx.getImageData(0, 0, img.width, img.height);
@@ -74,11 +76,14 @@ function prepare_canvas(binary_message){
     }
     ctx.putImageData(image_data, 0, 0);
     console.log("Dati nascosti con successo! Immagine steganografata pronta.");
+    setTimeout(() => {
     window.scrollTo({
-    top: 500,
-    left: 0,
-    behavior: 'smooth'
+        top: 500,
+        left: 0,
+        behavior: 'smooth'
     });
+}, 500);
+
 }
 function download(){
     const canvas = document.getElementById('modified_pic');

@@ -60,7 +60,6 @@ input[type="password"]:focus {
     outline: none;
     border-color: #667eea;
 }
-
 button {
     width: 80%;
     background: linear-gradient(135deg, #FFB366 0%, #FF8844 100%);

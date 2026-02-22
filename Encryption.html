@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="Encryption scrip.js"></script>
     <h1>Steganografia</h1>
-    <div>
+    <div class="Insert">
         <label name="testo_da_cifrare" id="testo_label">Inserisci il testo</label>
         <br>
         <input type="text" id="testo_da_cifrare">
@@ -22,11 +22,11 @@
         <br><br>
         <button onclick="check()">Invia</button>
     </div>
-        <h1>Immagine di partenza</h1>
-        <img src="Cat_November_2010-1a_(cropped_2023).jpg" id="starting_pic" width="250" height="250">
-
-        <h1>Immagine modificata</h1>
-        <canvas id="modified_pic"></canvas>
+        
+    <h1>Immagine di partenza</h1>
+    <img src="Cat_November_2010-1a_(cropped_2023).jpg" id="starting_pic" width="250" height="250">
+    <h1>Immagine modificata</h1>
+    <canvas id="modified_pic"></canvas>
 
     <button onclick="download()">Scarica immagine</button>
 </body>
