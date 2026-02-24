@@ -48,6 +48,7 @@ function prepare_canvas(binary_message){
 
     //console.log(pixel);
     let value_counter = 0;
+    value_counter = channelchoice();
 
     for(let i = 0;i < binary_message.length; i++){
         let local_byte = binary_message[i];
@@ -78,7 +79,7 @@ function prepare_canvas(binary_message){
     console.log("Dati nascosti con successo! Immagine steganografata pronta.");
     setTimeout(() => {
     window.scrollTo({
-        top: 500,
+        top: 1000,
         left: 0,
         behavior: 'smooth'
     });
@@ -102,4 +103,8 @@ function download(){
 function percentage(dimension, binary_message){
     let percentage = (binary_message.length/dimension)*100
     return percentage;
+}
+function channelchoice(){
+  let value =  parseInt(document.querySelector('input[name="colore_rgba"]:checked').value);
+  return value;
 }

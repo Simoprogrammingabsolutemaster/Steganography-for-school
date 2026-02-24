@@ -33,8 +33,8 @@ function Img_load(){
 }
 
 function Decrypt(password, data){
-    let red = 0;
-    let red_pos = 0;
+    let LSV_pos = 0;
+    let value_counter = channelchoice();
     let bit;
     let msg_still_encrypted = "";
     let msg_freed= "";
@@ -43,8 +43,8 @@ function Decrypt(password, data){
 
         for(let j = 0; j < 8; j++){
         
-        red = red_pos*4;
-        let pixel = data[red];
+        LSV_pos = value_counter*4;
+        let pixel = data[LSV_pos];
 
         if(pixel % 2 === 0){
             bit = 0;
@@ -52,7 +52,7 @@ function Decrypt(password, data){
             bit = 1;
         }
         char.push(bit);
-        red_pos ++;
+        value_counter ++;
     }
 
     let byte = char.join("");
@@ -65,9 +65,12 @@ function Decrypt(password, data){
         break;
     }
     }
-
-    msg_freed = msg_still_encrypted.replace("$$$STOP$$$", "");
-    return msg_freed;
+    if(msg_freed.endsWith("$$$STOP$$$")){
+        msg_freed = msg_still_encrypted.replace("$$$STOP$$$", "");
+        return msg_freed;
+    }else{
+        document.getElementById("error").innerText="ERRORE IMPOSSIBILE DECODIFICARE";
+    }
 }
 function finalDecryption(msg_to_decrypt, password){
 
@@ -80,4 +83,8 @@ function finalDecryption(msg_to_decrypt, password){
     catch(error){
         document.getElementById("error").innerText="ERRORE IMPOSSIBILE DECODIFICARE";
     }
+}
+function channelchoice(){
+  let value =  parseInt(document.querySelector('input[name="colore_rgba"]:checked').value);
+  return value;
 }

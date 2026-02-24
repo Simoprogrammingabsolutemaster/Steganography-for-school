@@ -20,6 +20,21 @@
         <label name="password">Inserisci la password</label><br>
         <input type="password" id="password">
         <br><br>
+        <label>Scegli il canale (Chiave di sicurezza secondaria):</label>
+        <div class="radio-group">
+            <input type="radio" id="canale_r" name="colore_rgba" value="0" checked>
+            <label for="canale_r" class="color-btn red-btn">R</label>
+
+            <input type="radio" id="canale_g" name="colore_rgba" value="1">
+            <label for="canale_g" class="color-btn green-btn">G</label>
+
+            <input type="radio" id="canale_b" name="colore_rgba" value="2">
+            <label for="canale_b" class="color-btn blue-btn">B</label>
+
+            <input type="radio" id="canale_a" name="colore_rgba" value="3">
+            <label for="canale_a" class="color-btn alpha-btn">A</label>
+        </div>
+    <br>        
         <button onclick="check()">Invia</button>
     </div>
         
