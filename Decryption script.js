@@ -66,7 +66,8 @@ function Decrypt(password, data){
         break;
     }
     }
-        return msg_freed;
+    msg_freed = msg_still_encrypted.replace("$$$STOP$$$", "");    
+    return msg_freed;
 }
 function finalDecryption(msg_to_decrypt, password){
 
@@ -85,5 +86,6 @@ function channelchoice(){
   return value;
 
 }
+
 
 
