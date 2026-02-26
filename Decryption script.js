@@ -69,8 +69,6 @@ function Decrypt(password, data){
     if(msg_freed.endsWith("$$$STOP$$$")){
         msg_freed = msg_still_encrypted.replace("$$$STOP$$$", "");
         return msg_freed;
-    }else{
-        document.getElementById("error").innerText="ERRORE IMPOSSIBILE DECODIFICARE";
     }
 }
 function finalDecryption(msg_to_decrypt, password){
@@ -90,3 +88,4 @@ function channelchoice(){
   return value;
 
 }
+
