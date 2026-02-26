@@ -34,7 +34,8 @@ function Img_load(){
 
 function Decrypt(password, data){
     let LSV_pos = 0;
-    let value_counter = channelchoice();
+    let value_counter = 0;
+    value_counter = channelchoice();
     let bit;
     let msg_still_encrypted = "";
     let msg_freed= "";
@@ -87,4 +88,5 @@ function finalDecryption(msg_to_decrypt, password){
 function channelchoice(){
   let value =  parseInt(document.querySelector('input[name="colore_rgba"]:checked').value);
   return value;
+
 }
